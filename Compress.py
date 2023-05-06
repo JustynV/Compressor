@@ -2,6 +2,7 @@ import heapq
 import pickle
 import time
 import os
+import sys
 
 class Tree:
     def __init__(self):
@@ -76,8 +77,9 @@ def pad_encoded_text(encoded_text):
 	encoded_text = padded_info + encoded_text
 	return encoded_text
 
-def compress(path):
+def compress():
     output_path = "comprimido.elmejorprofesor"
+    path = sys.argv[1]
 
     with open(path, 'r+') as file, open("clave.elmejorprofesor", "wb") as key,open(output_path, 'wb') as output:
         start = time.time()
@@ -102,6 +104,5 @@ def compress(path):
         print("Archivo comprimido: ", output_path)
 
 if __name__ == "__main__":
-    path = input("Digite el nombre del archivo a comprimir: ")
-    compress(path)
+    compress()
 

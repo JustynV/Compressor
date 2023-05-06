@@ -1,4 +1,8 @@
-def check(input1, input2):
+import sys
+
+def check():
+    input1 = sys.argv[1]
+    input2 = sys.argv[2]
     with open(input1, 'rb') as f1, open(input2, 'rb') as f2:
         while True:
             b1 = f1.read()
@@ -9,5 +13,5 @@ def check(input1, input2):
                 return "Ok"
 
 if __name__ == "__main__":
-    input1, input2 = input("Digite los nombres de los archivos a comparar: ").split()
-    print(check(input1, input2))
+    
+    print(check())
